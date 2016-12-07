@@ -1,0 +1,44 @@
+<div class="recept_description_name"
+     ng-bind="receptDescriptionCtrl.recept.name">
+</div>
+
+<img class="img" ng-src="{{receptDescriptionCtrl.recept.file}}">
+
+<table>
+    <tr ng-repeat="proportion in receptDescriptionCtrl.recept.proportions">
+        <td ng-bind="proportion.ingridient.name"></td>
+        <td><span ng-if="proportion.norma">&nbsp&nbsp-&nbsp&nbsp</span></td>
+        <td ng-bind="proportion.norma"></td>
+    </tr>
+</table>
+
+<div class="recept_description"
+     ng-bind="receptDescriptionCtrl.recept.text">
+</div>
+
+<div class="recept_references">
+    <div class="recept_reference" ng-repeat="reference in receptDescriptionCtrl.recept.references"
+         ng-click="receptDescriptionCtrl.viewReference(reference.receptReferenceId)"
+         ng-bind="reference.receptReferenceName">
+    </div>
+</div>
+
+<table>
+    <tr ng-repeat="detail in receptDescriptionCtrl.recept.details">
+        <td>
+            <img class="img" ng-src="{{detail.file}}">
+        </td>
+        <td ng-bind="detail.description"></td>
+    </tr>
+</table>
+
+<div class="button recept_description_btn" ng-click="receptDescriptionCtrl.editRecept()">Редактировать</div>
+<div class="button recept_description_btn" ng-click="receptDescriptionCtrl.deleteRecept()">Удалить</div>
+<div class="button recept_description_btn" ng-click="receptDescriptionCtrl.getPdfFromRecept()">
+    <div ng-if="!receptDescriptionCtrl.pdf">PDF</div>
+    <a ng-href="{{receptDescriptionCtrl.pdf}}" ng-if="receptDescriptionCtrl.pdf"
+       download="{{receptDescriptionCtrl.recept.name}}.pdf" ng-bind="receptDescriptionCtrl.recept.name"></a>
+</div>
+
+<div class="recept_error" ng-if="receptDescriptionCtrl.error"
+     ng-bind="receptDescriptionCtrl.error"></div>

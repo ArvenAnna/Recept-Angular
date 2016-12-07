@@ -1,0 +1,105 @@
+<div ng-show="receptEditCtrl.mainInformationVisible">
+    <recept-main-information
+            recept-id="receptEditCtrl.receptId"
+            model="receptEditCtrl.model"
+            below-content-visible="receptEditCtrl.belowContentVisible"/>
+</div>
+
+<div ng-show="receptEditCtrl.belowContentVisible">
+
+    <div ng-show="receptEditCtrl.mainInformationVisible">
+        <button class="btn show_hide_button" ng-click="receptEditCtrl.hideMainInformation()">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+            <span class="glyphicon glyphicon-chevron-up"></span>
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </button>
+    </div>
+    <div ng-show="!receptEditCtrl.mainInformationVisible">
+        <button class="btn show_hide_button" ng-click="receptEditCtrl.openMainInformation()">
+            <span>Основное</span>
+        </button>
+    </div>
+
+    <div ng-show="receptEditCtrl.proportionVisible">
+        <recept-proportions
+                recept-id="receptEditCtrl.receptId"
+                model="receptEditCtrl.model"/>
+    </div>
+
+    <div ng-show="receptEditCtrl.proportionVisible">
+        <button class="btn show_hide_button" ng-click="receptEditCtrl.hideProportions()">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+            <span class="glyphicon glyphicon-chevron-up"></span>
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </button>
+    </div>
+    <div ng-show="!receptEditCtrl.proportionVisible">
+        <button class="btn show_hide_button" ng-click="receptEditCtrl.openProportions()">
+            <span>Пропорции</span>
+        </button>
+    </div>
+
+    <div ng-show="receptEditCtrl.detailsVisible">
+        <recept-details
+                recept-id="receptEditCtrl.receptId"
+                model="receptEditCtrl.model"/>
+    </div>
+
+    <div ng-show="receptEditCtrl.detailsVisible">
+        <button class="btn show_hide_button" ng-click="receptEditCtrl.hideDetails()">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+            <span class="glyphicon glyphicon-chevron-up"></span>
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </button>
+    </div>
+    <div ng-show="!receptEditCtrl.detailsVisible">
+        <button class="btn show_hide_button" ng-click="receptEditCtrl.openDetails()">
+            <span>Детали</span>
+        </button>
+    </div>
+
+
+    <div ng-show="receptEditCtrl.referencesVisible">
+        <recept-references
+                recept-id="receptEditCtrl.receptId"
+                model="receptEditCtrl.model"/>
+    </div>
+
+    <div ng-show="receptEditCtrl.referencesVisible">
+        <button class="btn show_hide_button" ng-click="receptEditCtrl.hideReferences()">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+            <span class="glyphicon glyphicon-chevron-up"></span>
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </button>
+    </div>
+    <div ng-show="!receptEditCtrl.referencesVisible">
+        <button class="btn show_hide_button" ng-click="receptEditCtrl.openReferences()">
+            <span>Ссылки</span>
+        </button>
+    </div>
+
+
+    <div ng-show="receptEditCtrl.tagsVisible">
+        <recept-tags
+                recept-id="receptEditCtrl.receptId"
+                model="receptEditCtrl.model"/>
+    </div>
+
+    <div ng-show="receptEditCtrl.tagsVisible">
+        <button class="btn show_hide_button" ng-click="receptEditCtrl.hideTags()">
+            <span class="glyphicon glyphicon-chevron-up"></span>
+            <span class="glyphicon glyphicon-chevron-up"></span>
+            <span class="glyphicon glyphicon-chevron-up"></span>
+        </button>
+    </div>
+    <div ng-show="!receptEditCtrl.tagsVisible">
+        <button class="btn show_hide_button" ng-click="receptEditCtrl.openTags()">
+            <span>Тэги</span>
+        </button>
+    </div>
+
+    <button ng-click="receptEditCtrl.finish()" class="btn">
+        <span class="glyphicon glyphicon-ok"></span>
+    </button>
+
+</div>

@@ -1,0 +1,29 @@
+<input class="recept_edit" placeholder="Новое название" type="text" ng-model="receptMainInformationCtrl.model.name"/>
+
+<select class="recept_edit" ng-model="receptMainInformationCtrl.model.departId.id" convert-to-number>
+    <option ng-repeat="depart in receptMainInformationCtrl.departs" value="{{depart.id}}">{{depart.name}}</option>
+</select>
+
+<img class="img" id="photo" ng-src="{{receptMainInformationCtrl.file}}"/>
+
+<label class="recept_edit import_file">
+    <input file-model="receptMainInformationCtrl.foto" type="file"
+           accept="image/png"/>
+    <span class="file">Новое фото &nbsp;</span>
+    <span ng-bind="receptMainInformationCtrl.foto.name"></span>
+</label>
+
+<textarea ng-model="receptMainInformationCtrl.model.text"></textarea>
+
+<div ng-show="receptMainInformationCtrl.isSaveMainInfoVisible() && !receptMainInformationCtrl.belowContentVisible">
+    <button class="btn" ng-click="receptMainInformationCtrl.saveMainInfo()">Сохранить</button>
+</div>
+
+<div class="recept_error" ng-show="receptMainInformationCtrl.error"
+     ng-bind="receptMainInformationCtrl.error"></div>
+
+<div ng-show="receptMainInformationCtrl.belowContentVisible">
+    <button class="btn" ng-click="receptMainInformationCtrl.saveMainInfo()">Изменить</button>
+</div>
+
+<br>

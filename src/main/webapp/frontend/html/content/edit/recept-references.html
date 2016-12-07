@@ -1,0 +1,26 @@
+<table class="small_text">
+    <tr ng-repeat="ref in receptReferencesCtrl.model.references">
+        <td><span class="table_cell_content" ng-bind="ref.receptReferenceName"></span></td>
+        <td>&nbsp&nbsp</td>
+        <td>
+            <button class="btn table_cell_content" ng-click="receptReferencesCtrl.deleteReference(ref.id)">
+                <span class="glyphicon glyphicon-remove"></span>
+            </button>
+        </td>
+    </tr>
+</table>
+
+<table>
+    <tr>
+        <td>
+            <input class="textfield_edit" ng-model="receptReferencesCtrl.reference.receptReferenceName" auto-complete="ref_suggest.req"
+                   ng-blur="receptReferencesCtrl.chooseReference()"/>
+        </td>
+        <td>&nbsp&nbsp</td>
+        <td>
+            <button ng-click="receptReferencesCtrl.saveReference()" class="btn table_cell_content">
+                <span class="glyphicon glyphicon-ok"></span>
+            </button>
+        </td>
+    </tr>
+</table>

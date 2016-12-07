@@ -1,0 +1,39 @@
+<p class="small_text red_text">Ингридиенты:</p>
+<table>
+    <tr>
+        <td>
+            <select class="textfield_edit table_cell_content" ng-model="ingridientsCtrl.ingridientId" convert-to-number
+                    class="edit_select">
+                <option ng-repeat="ing in ingridientsCtrl.ingridients" value="{{ing.id}}">{{ing.name}}</option>
+            </select>
+        </td>
+        <td>&nbsp&nbsp</td>
+        <td>
+            <button class="btn table_cell_content"
+                    ng-disabled="!ingridientsCtrl.ingridientId"
+                    ng-click="ingridientsCtrl.deleteIngridient()">
+                <span class="glyphicon glyphicon-remove"></span>
+            </button>
+        </td>
+    </tr>
+</table>
+
+<p class="small_text red_text">Новый ингридиент:</p>
+<table>
+    <tr>
+        <td>
+            <input class="textfield_edit table_cell_content" type="text"
+                ng-model="ingridientsCtrl.ingridient.name" auto-complete="ing_suggest.req"/>
+        </td>
+        <td>&nbsp&nbsp</td>
+        <td>
+            <button ng-click="ingridientsCtrl.saveIngridient()" class="btn table_cell_content">
+                <span class="glyphicon glyphicon-ok"></span>
+            </button>
+        </td>
+    </tr>
+</table>
+
+<div class="recept_error" ng-if="ingridientsCtrl.error"
+     ng-bind="ingridientsCtrl.error"></div>
+

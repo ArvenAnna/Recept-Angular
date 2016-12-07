@@ -1,0 +1,42 @@
+<div style="background-image: url(/frontend/pictures/fire.png); background-size: contain"></div>
+
+<table class="small_text">
+    <tr ng-repeat="prop in receptProportionsCtrl.model.proportions">
+        <td><span class="table_cell_content" ng-bind="prop.ingridient.name"></span>&nbsp&nbsp</td>
+        <td><input class="textfield_edit table_cell_content" ng-model="prop.norma"/></td>
+        <td>&nbsp&nbsp</td>
+        <td>
+            <button class="btn table_cell_content" ng-click="receptProportionsCtrl.updateProportion(prop.id)">
+                <span class="glyphicon glyphicon-edit"></span>
+            </button>
+        </td>
+        <td>&nbsp&nbsp</td>
+        <td>
+            <button class="btn table_cell_content" ng-click="receptProportionsCtrl.deleteProportion(prop.id)">
+                <span class="glyphicon glyphicon-remove"></span>
+            </button>
+        </td>
+    </tr>
+</table>
+
+<p class="small_text red_text">Создать пропорцию:</p>
+<input class="textfield_edit" ng-model="receptProportionsCtrl.proportion.ingridient.name" auto-complete="ing_suggest.req"
+       ng-blur="receptProportionsCtrl.chooseIngridient()"/>
+<br><br>
+
+<table>
+    <tr>
+        <td><span class="table_cell_content">норма:</span></td>
+        <td>&nbsp&nbsp</td>
+        <td>
+            <input class="textfield_edit table_cell_content" type="text" ng-model="receptProportionsCtrl.proportion.norma"/>
+        </td>
+        <td>&nbsp&nbsp</td>
+        <td>
+            <button class="btn table_cell_content" ng-click="receptProportionsCtrl.saveProportion()">
+                <span class="glyphicon glyphicon-ok"></span>
+            </button>
+        </td>
+    </tr>
+</table>
+

@@ -1,0 +1,29 @@
+<div class="root">
+    <div class="recept_menu">
+        <recept-menu
+                theme="mainCtrl.theme"
+                choosen-depart-id="mainCtrl.choosenDepartId"
+                choosen-tag-id="mainCtrl.choosenTagId"
+                state="mainCtrl.state"/>
+    </div>
+
+    <div class="recept_content">
+        <recept-content
+                choosen-depart-id="mainCtrl.choosenDepartId"
+                choosen-tag-id="mainCtrl.choosenTagId"
+                state="mainCtrl.state"
+                query="mainCtrl.query"
+                sort="mainCtrl.sort"
+                items-per-page="mainCtrl.itemsPerPage"
+                recept-id="mainCtrl.receptId"/>
+    </div>
+
+    <div class="recept_sidebar">
+        <recept-sidebar
+                state="mainCtrl.state" ,
+                query="mainCtrl.query"
+                sort="mainCtrl.sort"
+                items-per-page="mainCtrl.itemsPerPage"
+                recept-id="mainCtrl.receptId"/>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+<table class="small_text">
+    <tr ng-repeat="tag in receptTagsCtrl.model.tags">
+        <td><span class="table_cell_content" ng-bind="tag.name"></span></td>
+        <td>&nbsp&nbsp</td>
+        <td>
+            <button class="btn table_cell_content" ng-click="receptTagsCtrl.deleteTag(tag.id)">
+                <span class="glyphicon glyphicon-remove"></span>
+            </button>
+        </td>
+    </tr>
+</table>
+
+<table>
+    <tr>
+        <td>
+            <select ng-model="receptTagsCtrl.tagId" convert-to-number
+                    class="textfield_edit table_cell_content">
+                <option ng-repeat="tag in receptTagsCtrl.tags" value="{{tag.id}}">{{tag.name}}
+                </option>
+            </select>
+        </td>
+        <td>&nbsp&nbsp</td>
+        <td>
+            <button ng-click="receptTagsCtrl.saveTag()" class="btn table_cell_content">
+                <span class="glyphicon glyphicon-ok"></span>
+            </button>
+        </td>
+    </tr>
+</table>

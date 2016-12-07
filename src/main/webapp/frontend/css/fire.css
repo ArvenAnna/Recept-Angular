@@ -1,0 +1,171 @@
+@font-face {
+    font-family: myFont;
+    src: url(10213.ttf);
+}
+
+body {
+    background-color: black;
+    color: #CC3300;
+    /*text-shadow: -1px -1px #3B0B0B;*/
+    font-weight: bold;
+    font-size: 0.8rem;
+    font-family: myFont;
+}
+
+a {
+    color: black;
+}
+
+.root {
+    box-shadow: 0 0 15px 2px #CC3300, 0 0 40px 8px #3B0B0B;
+    background-color: #151515;
+    border-radius: 4px;
+}
+
+/* menu and sidebar */
+.recept_menu_btn {
+    background: linear-gradient(to right, #CC3300, #151515);
+    text-align: left;
+}
+
+.recept_menu_btn:hover {
+    background: linear-gradient(to right, #151515, #CC3300);
+    text-align: right;
+}
+
+.recept_sidebar_btn {
+    background: linear-gradient(to right, #151515, #CC3300);
+    text-align: right;
+}
+
+.recept_sidebar_btn:hover {
+    background: linear-gradient(to right, #CC3300, #151515);
+    text-align: left;
+}
+
+/* page navigation */
+.page_button {
+    color: #ec971f;
+}
+
+.page_button:hover {
+    color: #985f0d;
+}
+
+/* recept description */
+.recept_description {
+    text-align: justify;
+    color: #721E02;
+    margin: 20px 0;
+}
+
+.recept_description_btn {
+    text-align: center;
+    background: linear-gradient(to right, #151515, #CC3300 50%, #151515);
+}
+
+.recept_references {
+    margin: 20px 0;
+}
+
+.recept_reference {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+/* recept edit */
+
+input {
+    border: none;
+    background: linear-gradient(to right, black, #151515);
+    color: #ec971f;
+    font-size: 0.8rem;
+    font-family: myFont;
+    width: 70%;
+    padding: 4px 4px 4px 10px;
+}
+
+select {
+    border: none;
+    background: linear-gradient(to right, black, #151515);
+    color: #ec971f;
+    font-size: 0.8rem;
+    font-family: myFont;
+    width: 70%;
+    padding: 4px 4px 4px 10px;
+}
+
+select > option {
+    border: none;
+    background-color: black;
+    color: #ec971f;
+    font-size: 0.8rem;
+    font-family: myFont;
+    width: 70%;
+    padding: 4px 4px 4px 10px;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+textarea {
+    background-color: #151515;
+    width: 100%;
+    font-size: 0.8rem;
+    line-height: 1rem;
+    font-family: myFont;
+    color: #ec971f;
+    border: none;
+    resize: none;
+    box-sizing: border-box;
+    height: 6rem;
+    margin: 20px 0;
+}
+
+textarea:focus {
+    background-color: black;
+    color: #CC3300;
+}
+
+.import_file {
+    color: #ec971f;
+}
+
+.red_text {
+    color: #810A00;
+}
+
+.recept_error {
+    background-color: #FA5858;
+    border-radius: 5px;
+    color: #204d74;
+    font-style: italic;
+    font-weight: bold;
+    border: 2px solid #204d74;
+    text-align: center;
+    padding: 5px;
+}
+
+.proportion_picture {
+    width: 100%;
+    background-image: url(/frontend/pictures/fire.png);
+    z-index: 1000;
+}
+
+.table_cell_content {
+    margin: 5px 0 5px 0;
+}
+
+.show_hide_button {
+    display: block;
+    width: 200px;
+    margin: auto;
+    background-color: #ec971f;
+}
+
+.show_hide_button:hover {
+    background-color: #985f0d !important;
+}
+
+

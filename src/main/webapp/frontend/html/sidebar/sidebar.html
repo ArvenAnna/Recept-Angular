@@ -1,0 +1,47 @@
+<div class="button recept_sidebar_btn">
+    <span>Поиск:</span>
+    <br>
+    <input ng-model="sidebarCtrl.query">
+</div>
+
+
+<div class="button recept_sidebar_btn">
+    <span>Сортировка:</span>
+    <br>
+    <select ng-model="sidebarCtrl.sort">
+        <option value="name">алфавит</option>
+        <option value="id">дата</option>
+    </select>
+</div>
+
+<div class="button recept_sidebar_btn"
+        ng-click="sidebarCtrl.createRecept()">
+    Новый рецепт
+</div>
+
+<div class="button recept_sidebar_btn"
+        ng-click="sidebarCtrl.editIngridients()">
+    Ингридиенты
+</div>
+
+<div class="button recept_sidebar_btn">
+    <span>На странице:</span>
+    <br>
+    <input ng-model="sidebarCtrl.itemsPerPage">
+</div>
+
+<div class="button recept_sidebar_btn" ng-show="sidebarCtrl.isUploadXmlMode()">
+    <label class="import_file">
+        <input file-model="sidebarCtrl.file" type="file"
+               accept="application/xml"/>
+        <span>Загрузить XML</span>
+        <span ng-bind="sidebarCtrl.file.name"></span>
+    </label>
+</div>
+<div class="button recept_sidebar_btn"
+        ng-show="!sidebarCtrl.isUploadXmlMode()"
+        ng-click="sidebarCtrl.parseFile()">
+    парсить
+</div>
+<div class="recept_error" recept-error ng-if="sidebarCtrl.error"
+     ng-bind="sidebarCtrl.error"></div>

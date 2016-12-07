@@ -1,0 +1,33 @@
+<div class="content">
+    <div ng-if="contentCtrl.isHomeState()">
+        <p>content is not available</p>
+    </div>
+    <div ng-if="contentCtrl.isReceptListState()">
+        <recept-list
+                choosen-depart-id="contentCtrl.choosenDepartId"
+                choosen-tag-id="contentCtrl.choosenTagId"
+                state="contentCtrl.state"
+                recept-id="contentCtrl.receptId"
+                query="contentCtrl.query"
+                sort="contentCtrl.sort"
+                items-per-page="contentCtrl.itemsPerPage"/>
+    </div>
+    <div ng-if="contentCtrl.isReceptDescriptionState()">
+        <recept-description
+                recept-id="contentCtrl.receptId"
+                state="contentCtrl.state"/>
+    </div>
+    <div ng-if="contentCtrl.isReceptEditState()">
+        <recept-edit
+                recept-id="contentCtrl.receptId"
+                state="contentCtrl.state"/>
+    </div>
+    <div ng-if="contentCtrl.isReceptCreateState()">
+        <recept-edit
+                state="contentCtrl.state"/>
+    </div>
+    <div ng-if="contentCtrl.isIngridientEditState()">
+        <ingridients
+                state="contentCtrl.state"/>
+    </div>
+</div>

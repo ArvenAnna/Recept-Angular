@@ -1,0 +1,21 @@
+<div ng-repeat="depart in menuCtrl.departs| orderBy : 'id'">
+    <div class="button recept_menu_btn" ng-click="menuCtrl.chooseDepart(depart.id)"
+         ng-bind="depart.name"></div>
+</div>
+
+<div class="button recept_menu_btn" ng-click="menuCtrl.chooseDepart(-1)">Все</div>
+
+<div ng-repeat="tag in menuCtrl.tags| orderBy : 'id'">
+    <div class="button recept_menu_btn" ng-click="menuCtrl.chooseTag(tag.id)"
+         ng-bind="tag.name"></div>
+</div>
+
+<img width="100%" ng-src="frontend/pictures/{{menuCtrl.theme.theme}}.png">
+
+<div class="button recept_menu_btn">
+    <span>Темы:</span><br>
+    <select ng-model="menuCtrl.theme.theme">
+        <option value="wind">Wind theme</option>
+        <option value="fire">Fire theme</option>
+    </select>
+</div>

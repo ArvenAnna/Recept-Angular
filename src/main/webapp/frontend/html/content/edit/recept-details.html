@@ -1,0 +1,44 @@
+<table class="small_text">
+    <tr ng-repeat="detail in receptDetailsCtrl.model.details">
+        <td><img class="table_cell_content" width="100px" ng-src="{{detail.file}}"></td>
+        <td>&nbsp&nbsp</td>
+        <td><input type="text" class="textfield_edit table_cell_content" ng-model="detail.description"/></td>
+        <td>&nbsp&nbsp</td>
+        <td>
+            <button ng-click="receptDetailsCtrl.updateDetail(detail.id)" class="btn table_cell_content">
+                <span class="glyphicon glyphicon-edit">редакт</span>
+            </button>
+        </td>
+        <td>&nbsp&nbsp</td>
+        <td>
+            <button ng-click="receptDetailsCtrl.deleteDetail(detail.id)" class="btn table_cell_content">
+                <span class="glyphicon glyphicon-remove">удал</span>
+            </button>
+        </td>
+    </tr>
+</table>
+
+<p class="small_text red_text">Новая запись:</p>
+
+<table>
+    <tr>
+        <td>
+            <label class="import_file">
+                <input file-model="receptDetailsCtrl.foto" type="file" accept="image/png"/>
+                <div class="glyphicon glyphicon-download-alt">Файл</div>
+                <div ng-bind="receptDetailsCtrl.foto.name"></div>
+            </label>
+        </td>
+        <td>&nbsp&nbsp</td>
+        <td>
+            <input class="textfield_edit table_cell_content" ng-model="receptDetailsCtrl.detail.description"
+                   type="text"/>
+        </td>
+        <td>&nbsp&nbsp</td>
+        <td>
+            <button ng-click="receptDetailsCtrl.saveDetail()" class="btn table_cell_content">
+                <span class="glyphicon glyphicon-ok">сохр</span>
+            </button>
+        </td>
+    </tr>
+</table>
